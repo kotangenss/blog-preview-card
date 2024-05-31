@@ -57,20 +57,18 @@ body {
   }
 }
 
-.card__image {
-  max-height: 200px;
-}
-
 .card__image img {
   width: 100%;
   border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .card__content {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  margin: 24px 0;
+  margin: 18px 0 24px;
 }
 
 .content__category {
@@ -88,7 +86,7 @@ body {
 
 .content__title {
   @include text(700, 24px, black);
-  line-height: 150%;
+  line-height: 140%;
   transition: all 0.2s ease;
 }
 
@@ -112,6 +110,15 @@ body {
 }
 
 @media(max-width: 375px) {
+  .card__content {
+    margin: 18px 0;
+  }
+
+  .card__image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
   .content__category {
     @include text(700, 12px, black);
   }
@@ -126,5 +133,9 @@ body {
 
   .content__description {
     @include text(400, 14px, $gray);
+  }
+
+  .card__author {
+    margin-top: -8px;
   }
 }
