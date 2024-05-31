@@ -28,7 +28,7 @@ body {
 
 .container {
   display: flex;
-  padding: 0 15px;
+  padding: 0 24px;
 }
 
 .card {
@@ -43,24 +43,26 @@ body {
   border-radius: 20px;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   transition: all 0.2s ease;
-}
 
-.card:hover {
-  transition: all 0.2s ease;
-  box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 1);
-  cursor: pointer;
-}
-
-.card:hover .content__title {
-  color: $yellow;
-  transition: all 0.2s ease;
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 1);
+      cursor: pointer;
+  
+      .content__title {
+        color: $yellow;
+        transition: all 0.2s ease;
+      }
+    }
+  }
 }
 
 .card__image {
-  height: 200px;
+  max-height: 200px;
 }
 
 .card__image img {
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -107,4 +109,22 @@ body {
 
 .author__name {
   @include text(700, 14px, black);
+}
+
+@media(max-width: 375px) {
+  .content__category {
+    @include text(700, 12px, black);
+  }
+
+  .content__publishdate {
+    @include text(400, 12px, black);
+  }
+
+  .content__title {
+    @include text(700, 20px, black);
+  }
+
+  .content__description {
+    @include text(400, 14px, $gray);
+  }
 }
