@@ -39,6 +39,18 @@ body {
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 8px 8px 0px 0px rgb(0, 0, 0);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transition: all 0.2s ease;
+  box-shadow: 16px 16px 0px 0px rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.card:hover .content__title {
+  color: #F4D04E;
+  transition: all 0.2s ease;
 }
 
 .card__image {
@@ -78,6 +90,7 @@ body {
   font-size: 24px;
   color: black;
   line-height: 150%;
+  transition: all 0.2s ease;
 }
 
 .content__description {
